@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\ShortUrlController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,6 +13,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [ShortUrlController::class, 'index']);
+Route::post('/', [ShortUrlController::class, 'store']);
+Route::get('/{shortUrl}', [ShortUrlController::class, 'show']);
