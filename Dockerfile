@@ -26,8 +26,8 @@ RUN a2enmod rewrite headers
 # Copy application files
 COPY . .
 
-# Replace .env.example with .env
-RUN cp .env.example .env
+# Rename .env.example to .env
+RUN mv .env.example .env
 
 # Set file permissions
 RUN chown -R www-data:www-data /var/www/html/storage /var/www/html/bootstrap/cache
