@@ -12,12 +12,17 @@ composer install
 ```
 Replace <repository_url> with the URL of your Laravel application repository, and <repository_name> with the name of the cloned repository.
 
-### Step 2: Build and Start Docker Containers
+### Step 2: Create .env file and copy .env.example content to .env file (must be both files to prevent error) 
+```sh
+touch .env
+cp .env.example .env
+```
+### Step 3: Build and Start Docker Containers
 ##### `run terminal command`
 ```sh
 docker-compose up -d --build
 ```
-### Step 3: Migration the Laravel Application
+### Step 4: Migration the Laravel Application
 ##### `run terminal commands`
 ```sh
 docker ps
@@ -25,6 +30,6 @@ docker exec -it <container_name_or_id> php artisan migrate
 ```
 Replace <container_name_or_id> with the name or ID of the Laravel container.
 
-### Step 4: Application is Launched
+### Step 5: Application is Launched
 
 After executing the migration command, your Laravel application should be successfully launched and ready to use.
