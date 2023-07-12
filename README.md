@@ -38,3 +38,23 @@ After executing the migration command, your Laravel application should be succes
 ```sh
     URL: http://localhost:8080/
 ```
+
+## Valid Routes
+
+GET request
+
+    localhost:8080/shortUrl
+
+    where shortUrl is the generated short URL 
+
+POST request 
+    
+    localhost:8080/
+
+    Post request body example:
+        ​{"url":"https://laravel.com"}
+
+    header:
+        Content-Type: application/json
+
+
