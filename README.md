@@ -13,6 +13,7 @@ composer install
 Replace <repository_url> with the URL of your Laravel application repository, and <repository_name> with the name of the cloned repository.
 
 ### Step 2: Create .env file and copy .env.example content to .env file (must be both files to prevent error) 
+##### `run terminal commands`
 ```sh
 touch .env
 cp .env.example .env
@@ -20,7 +21,7 @@ cp .env.example .env
 ### Step 3: Build and Start Docker Containers
 ##### `run terminal command`
 ```sh
-docker-compose up -d --build
+docker-compose up -d
 ```
 ### Step 4: Migration the Laravel Application
 ##### `run terminal commands`
