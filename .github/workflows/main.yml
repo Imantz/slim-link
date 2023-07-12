@@ -1,0 +1,37 @@
+name: Build and Deploy
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Create .env file if not exist
+        run: |
+          if [ ! -f .env ]; then
+            cp .env.example .env
+          fi
+
+      - name: Set up environment variables
+        run: |
+          sed -i "s/APP_ENV=.*/APP_ENV=local/" .env
+          sed -i "s/DB_HOST=.*/DB_HOST=mysql/" .env
+          sed -i "s/DB_PORT=.*/DB_PORT=3306/" .env
+          sed -i "s/DB_DATABASE=.*/DB_DATABASE=task/" .env
+          sed -i "s/DB_USERNAME=.*/DB_USERNAME=root/" .env
+          sed -i "s/DB_PASSWORD=.*/DB_PASSWORD=/" .env
+
+      - name: Install dependencies with Composer
+        run: composer install
+
+      - name: Build Docker images
+        run: docker-compose build
+
+      - name: Deploy Docker Compose
+        run: docker-compose up -d
