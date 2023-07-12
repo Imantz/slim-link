@@ -1,6 +1,7 @@
 # Launch Laravel Application using Docker
-## Prerequisites
+[![Build and Deploy](https://github.com/Imantz/slim-link/actions/workflows/main.yml/badge.svg)](https://github.com/Imantz/slim-link/actions/workflows/main.yml)
 
+## Prerequisites
 Docker and Docker Compose, Composer should be installed on your machine.
 
 ### Step 1: Clone the Laravel Application
