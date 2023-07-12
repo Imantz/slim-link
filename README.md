@@ -34,3 +34,7 @@ Replace <container_name_or_id> with the name or ID of the Laravel container.
 ### Step 5: Application is Launched
 
 After executing the migration command, your Laravel application should be successfully launched and ready to use.
+
+```sh
+    URL: http://localhost:8080/
+```
